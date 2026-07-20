@@ -2,7 +2,8 @@ version = 1
 revision = 3
 requires-python = ">=3.10, <3.14"
 resolution-markers = [
-    "python_full_version >= '3.12'",
+    "python_full_version >= '3.13'",
+    "python_full_version == '3.12.*'",
     "python_full_version == '3.11.*'",
     "python_full_version < '3.11'",
 ]
@@ -57,7 +58,7 @@ dev = [
 [package.metadata]
 requires-dist = [
     { name = "boto3", specifier = ">=1.42.53" },
-    { name = "dagster", specifier = "==1.12.14" },
+    { name = "dagster", specifier = "==1.13.14" },
     { name = "dagster-aws", specifier = ">=0.28.14" },
     { name = "dagster-dbt", specifier = ">=0.28.14" },
     { name = "dagster-dg-cli" },
@@ -432,7 +433,7 @@ wheels = [
 
 [[package]]
 name = "dagster"
-version = "1.12.14"
+version = "1.13.14"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "alembic" },
@@ -453,7 +454,6 @@ dependencies = [
     { name = "pywin32", marker = "sys_platform == 'win32'" },
     { name = "requests" },
     { name = "rich" },
-    { name = "setuptools" },
     { name = "six" },
     { name = "sqlalchemy" },
     { name = "structlog" },
@@ -465,14 +465,14 @@ dependencies = [
     { name = "universal-pathlib" },
     { name = "watchdog" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/dc/b0/a106e746fe72039be390e17be493980eb50194e0845b1b302c8e102f2f63/dagster-1.12.14.tar.gz", hash = "sha256:2dd19a54149ff31846d331dfc4ea4d4eb19bec4c7b7d28295c22d47cced05941", size = 1572892, upload-time = "2026-02-05T21:23:59.321Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/aa/81/334c156978278ad9212d0949f5f9475ef814f1877a37c1d7fb194af16c23/dagster-1.13.14.tar.gz", hash = "sha256:5570b775a2a1fca215f35e9a8c87b5f8c5a56a42aa282ea0f83b9c889e2e4a69", size = 3602676, upload-time = "2026-07-16T18:02:37.566Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/15/4c/028403a3eccc487af0af31e52aafbee30219a28fb34d7055b2e90c8d9a5b/dagster-1.12.14-py3-none-any.whl", hash = "sha256:acd57cd78854a3213f3850456b546d89ce993b35b1f497e5873162ae02015dff", size = 1959612, upload-time = "2026-02-05T21:23:57.408Z" },
+    { url = "https://files.pythonhosted.org/packages/cf/59/ccb53caf1d562b3e54b106721827839575dd28276ac76456b2484f46ca8f/dagster-1.13.14-py3-none-any.whl", hash = "sha256:82dbfe46b3cf6dcf03d6b699c8cbcd1450b35e21a4e5ea8177db192f1e530eaf", size = 2015658, upload-time = "2026-07-16T18:02:34.843Z" },
 ]
 
 [[package]]
 name = "dagster-aws"
-version = "0.28.14"
+version = "0.29.14"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "boto3" },
@@ -480,14 +480,14 @@ dependencies = [
     { name = "packaging" },
     { name = "requests" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/1e/9f/7194a715b04462bd4b100f80b5a74cc70c599d31eeb99d8cf174a2ad7f4b/dagster_aws-0.28.14.tar.gz", hash = "sha256:c0e5ed70854b165e2060d0c070cd17e1e29fea5b487bedb31d1815adc4be091c", size = 131551, upload-time = "2026-02-05T21:27:44.265Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/26/6e/901a5b18178cd41bf3628c665fbfd08040583ec433d765ac0201413b4b39/dagster_aws-0.29.14.tar.gz", hash = "sha256:1b3edf3b4bb437e3f7af1cebbb9e58928a83c342fb0f37d4d9683994d45f10b2", size = 429747, upload-time = "2026-07-16T18:15:45.946Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/bd/fe/e24a0f7bec2b99d0af5871a0daa8c9372506ad7b2e808c956fb6fe32aa3d/dagster_aws-0.28.14-py3-none-any.whl", hash = "sha256:289ba64ff1d54a20ca51ada74904ce64e49c3045878963146bd44d26a7916cc2", size = 166474, upload-time = "2026-02-05T21:27:42.606Z" },
+    { url = "https://files.pythonhosted.org/packages/2b/56/433070b08f8bc5ffb43f00dcbe32ac730b9e23ca8f137d6e0852426ecc37/dagster_aws-0.29.14-py3-none-any.whl", hash = "sha256:ae473fe008845d1c5902c16fb4210effc0c210e9ec3dbed16f1eda51ee3129c0", size = 165399, upload-time = "2026-07-16T18:15:44.325Z" },
 ]
 
 [[package]]
 name = "dagster-cloud-cli"
-version = "1.12.14"
+version = "1.13.14"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "click" },
@@ -503,14 +503,14 @@ dependencies = [
     { name = "typer" },
     { name = "validators" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/86/35/4ebfb82ae9b01114fc85dcb6d641a99daca968e87309d33e00166eacc3d5/dagster_cloud_cli-1.12.14.tar.gz", hash = "sha256:9ec6996c298935a0add30da123921151011724a9d2ea88a54884e326d5c694f9", size = 97498, upload-time = "2026-02-05T21:29:36.48Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/8c/cf/d354a3f637aa1e9f7caaac07564cbdf6bbf647c457794b82d233bf7f6ffc/dagster_cloud_cli-1.13.14.tar.gz", hash = "sha256:a477c961979e2b780819d1c51df7b34339b54f60077caa55fe95a08375c9776b", size = 173718, upload-time = "2026-07-16T18:14:23.487Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/96/a1/64f4135d2871a8ee1d81b9a5a890efbab85b2cc6fe87711eab01fa336afa/dagster_cloud_cli-1.12.14-py3-none-any.whl", hash = "sha256:8d789dca4651d881d281a2df136fbdcadb069e5f311b2d67e7625fd845afcbad", size = 119028, upload-time = "2026-02-05T21:29:35.44Z" },
+    { url = "https://files.pythonhosted.org/packages/80/06/8d2d039cf8fc52a2a2faf4af5946946ef1e4728d244dace498331d8f397a/dagster_cloud_cli-1.13.14-py3-none-any.whl", hash = "sha256:e58447e979439f99083e7651f4a3a388fc7845dded9e9daf67724056724e6203", size = 120180, upload-time = "2026-07-16T18:14:22.2Z" },
 ]
 
 [[package]]
 name = "dagster-dbt"
-version = "0.28.14"
+version = "0.29.14"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "dagster" },
@@ -526,29 +526,31 @@ dependencies = [
     { name = "sqlglot", extra = ["rs"] },
     { name = "typer" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/22/c2/ceec135e01b85a89122e7de1e7f7965edcb39c7596de15a63f95419a4ab1/dagster_dbt-0.28.14.tar.gz", hash = "sha256:1f21eceb7dea39ded3d68e24c5324e5e9692cbb935aa45414154205090205c25", size = 100849, upload-time = "2026-02-05T21:29:30.32Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/0f/3b/47a910109f7a58631af31d12a84ee8b1c1fba889b7a956346fbfbc7fa26e/dagster_dbt-0.29.14.tar.gz", hash = "sha256:bab5a6009db05073bab9e3ea2d86d1096d7520780d52b737d3c4c65b8a528eb4", size = 918112, upload-time = "2026-07-16T18:08:23.558Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/70/70/0cdc4763789d8b95039063bfddbb7e54560629c6607e9db0023c04ac6163/dagster_dbt-0.28.14-py3-none-any.whl", hash = "sha256:581db40d50378cf09ead5e33209b1a8de34bce35e45b1631ba1b244cb06d0542", size = 121122, upload-time = "2026-02-05T21:29:29.333Z" },
+    { url = "https://files.pythonhosted.org/packages/84/44/916bc41763e741adcff4578b7a185567ec2c8f422c7e3f77ee05f0e62171/dagster_dbt-0.29.14-py3-none-any.whl", hash = "sha256:e9c88766baf201bb4bbcf94452a7e315464f06bce381cd8fbb2792047b65a48d", size = 131585, upload-time = "2026-07-16T18:08:22.135Z" },
 ]
 
 [[package]]
 name = "dagster-dg-cli"
-version = "1.12.14"
+version = "1.13.14"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "dagster" },
     { name = "dagster-cloud-cli" },
     { name = "dagster-dg-core" },
+    { name = "dagster-rest-resources" },
+    { name = "requests" },
     { name = "typer" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/6c/cd/6eabbfc1d93afe20431cf294c1e094c69a90f6a6e6679a3860cf365a2b0c/dagster_dg_cli-1.12.14.tar.gz", hash = "sha256:da1bd414f1893786913645d8a7dc66dd1dd8dc510395dead3be07d332638d274", size = 126149, upload-time = "2026-02-05T21:28:34.541Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/c4/1f/e9c0eedcaf1ff15a0f8aa44f685dd478f7279851af5d526786fa613de90b/dagster_dg_cli-1.13.14.tar.gz", hash = "sha256:7c0ea241eb1bdcc5187256d433f8a6ff6692abd7a290432e3ae68afe437a0870", size = 513283, upload-time = "2026-07-16T18:08:41.842Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/9b/f9/aaa0b62d754e07fbb8283a417367942ed50248936fd705d15b8e42c3d0cb/dagster_dg_cli-1.12.14-py3-none-any.whl", hash = "sha256:6e12fe249aa5dd5fe639df5a6d66c201d3934906d216ddb47e1dcf22753e5953", size = 181358, upload-time = "2026-02-05T21:28:33.336Z" },
+    { url = "https://files.pythonhosted.org/packages/5b/98/2796a3f8ecb3f037f449ac40aa3a64b9fbd7bea99eb38dfdde840d50a9cf/dagster_dg_cli-1.13.14-py3-none-any.whl", hash = "sha256:cbeaa02bd4c1b50afc8ffa8d21d47ebab4b7b366772da3cfce53533a4a53a89f", size = 191130, upload-time = "2026-07-16T18:08:40.445Z" },
 ]
 
 [[package]]
 name = "dagster-dg-core"
-version = "1.12.14"
+version = "1.13.14"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "click" },
@@ -570,27 +572,27 @@ dependencies = [
     { name = "watchdog" },
     { name = "yaspin" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/45/13/93ad12a24347ed10ed1a14bb645db3eb0f6cfcfe7f035e92933abc3e354c/dagster_dg_core-1.12.14.tar.gz", hash = "sha256:a5fb6b10fb5323187ac8fe3b5ea941d3a308df624035e74dd0e52f3ee95dfcd6", size = 41705, upload-time = "2026-02-05T21:28:02.339Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/67/fd/a2f029e69095b1013c206d942bffbee4a6edd15cbfd62f83b3c0410d0e9f/dagster_dg_core-1.13.14.tar.gz", hash = "sha256:9267ae01e7ef73b2e0c951bbd117d24f6111f7d625b393f88789696df4d8aff6", size = 241394, upload-time = "2026-07-16T18:11:33.643Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/d0/44/1584d8e8e0f5a4980b81b38e32070c46511bbaf07e24316507b81082a713/dagster_dg_core-1.12.14-py3-none-any.whl", hash = "sha256:65b4383706f71c34060cce5b2686e3834da6c81920d48a356f0c037b3920650d", size = 47683, upload-time = "2026-02-05T21:28:01.347Z" },
+    { url = "https://files.pythonhosted.org/packages/98/d9/4a2c3129607f0d25b00edb00f94951d946504718b664f605c298b31f6991/dagster_dg_core-1.13.14-py3-none-any.whl", hash = "sha256:1187bedf5052fe6e1e8125f284ffe6272e427799da270dd84a71057765c9e8a8", size = 47434, upload-time = "2026-07-16T18:11:32.452Z" },
 ]
 
 [[package]]
 name = "dagster-duckdb"
-version = "0.28.14"
+version = "0.29.14"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "dagster" },
     { name = "duckdb" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/76/49/9b4252064b0cbf63efc1af904068112079da448ddbd1e97095c35fffdc94/dagster_duckdb-0.28.14.tar.gz", hash = "sha256:390b99a41515cba51e537121586bddfb50e6f7f1465cd956fed3e2a8b248cfad", size = 9842, upload-time = "2026-02-05T21:29:04.699Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/02/f7/892148724dcc7600ecf316c6e49b893545623abcd6181a190fdea6995b2e/dagster_duckdb-0.29.14.tar.gz", hash = "sha256:594ddb6c90387eef00c4ef670584eb7dcec61eb588776a148a1227171578f74e", size = 142297, upload-time = "2026-07-16T18:17:43.826Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/8f/b1/d767d2c0d05570e9bf45f4aeffb7e9f10a8b67a5ca008ce360489c0e836b/dagster_duckdb-0.28.14-py3-none-any.whl", hash = "sha256:e4f6658981aee7e7f052de3f4a99af13e05f13930555a7c07eccded6b6c05063", size = 10622, upload-time = "2026-02-05T21:29:03.865Z" },
+    { url = "https://files.pythonhosted.org/packages/3b/39/2e404417ace6dd43c6ea8b6f6578d00d28377f59299b1db5d0167d9db22e/dagster_duckdb-0.29.14-py3-none-any.whl", hash = "sha256:9ce3036f4c9803892e297123620632eb8888b11ff0f472bab60d7059294e9589", size = 10194, upload-time = "2026-07-16T18:17:42.771Z" },
 ]
 
 [[package]]
 name = "dagster-graphql"
-version = "1.12.14"
+version = "1.13.14"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "dagster" },
@@ -599,23 +601,37 @@ dependencies = [
     { name = "requests" },
     { name = "starlette" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/d3/3d/b1f0b5cabeea48f679007011f531dceb34786a79c1393007de0ed32d1240/dagster_graphql-1.12.14.tar.gz", hash = "sha256:787ef4a28578bde368afa296b36bc876a99b708eca43ce226fbe3d742f3687e2", size = 164653, upload-time = "2026-02-05T21:24:09.852Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/a1/0a/b89dd47768dc93d6b5ed07fb801572eda97cf920f3f55cd1cd796be7d52f/dagster_graphql-1.13.14.tar.gz", hash = "sha256:37046ff481ef13959db79b1d4a0595b2fe3010c0782c221d410d1ff4156199b2", size = 681998, upload-time = "2026-07-16T18:03:16.02Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/d1/d9/c2d3e13ad2e970d9b502415775af5939b99dbb4bee8571d7a79e5df52bf6/dagster_graphql-1.12.14-py3-none-any.whl", hash = "sha256:fc1a534f027722678aa10b5e5945ceeaf80409310137a4c5d8f5901561a43b8c", size = 212757, upload-time = "2026-02-05T21:24:08.183Z" },
+    { url = "https://files.pythonhosted.org/packages/79/5b/a272ab3b12a3c6a7d18ff3ae496b3953a11fd0303218fbe6573fbd487f93/dagster_graphql-1.13.14-py3-none-any.whl", hash = "sha256:8f9076019fc2027314408faaec4aac3631da9f186ffd1fbcb6e25f7af53edce5", size = 223081, upload-time = "2026-07-16T18:03:14.605Z" },
 ]
 
 [[package]]
 name = "dagster-pipes"
-version = "1.12.14"
+version = "1.13.14"
 source = { registry = "https://pypi.org/simple" }
-sdist = { url = "https://files.pythonhosted.org/packages/01/f5/666d965659c9f4ae9190c4083c972f8e7530cb0b7901c6ffac0ebd878940/dagster_pipes-1.12.14.tar.gz", hash = "sha256:88cb6280596241f3515c27eaae124498a017d390e4ab45f2cfbbef45cc30e3ad", size = 21072, upload-time = "2026-02-05T21:24:05.884Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/0c/bc/8c4ba10969aef17f014b85439ec206b64544539aec2dc4f5d30b810dd46f/dagster_pipes-1.13.14.tar.gz", hash = "sha256:7a48fa961f21b6048857c2a1f97bcee9867a72e4ddb852291f53f030b662c6fb", size = 149679, upload-time = "2026-07-16T18:03:06.822Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/9c/a7/c437d4c820ea6ae2100345b5d3cde3e842099e9feda9e24896f0c739ed7e/dagster_pipes-1.12.14-py3-none-any.whl", hash = "sha256:9e94dd53a0138ab6ae95aa19288999411f0d18241be9af1be42869470e8cfbb0", size = 20849, upload-time = "2026-02-05T21:24:04.088Z" },
+    { url = "https://files.pythonhosted.org/packages/5e/2f/3491b2c94a7dc4920fe1c76200081d23c68e6aa196223e624eb01c100aad/dagster_pipes-1.13.14-py3-none-any.whl", hash = "sha256:59ab8e92677ac228cae3110eea42ef1c00c0a3888306483c9d25c4909defc1f6", size = 20245, upload-time = "2026-07-16T18:03:05.698Z" },
+]
+
+[[package]]
+name = "dagster-rest-resources"
+version = "0.29.14"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "dagster-shared" },
+    { name = "httpx" },
+    { name = "pydantic" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/0c/7c/eb98209d4b138a25c5ae103af45272f3828df2fe55b30db88d1dc5338b7b/dagster_rest_resources-0.29.14.tar.gz", hash = "sha256:3be85fbd83becda1e01dd6478175b0fcf7169d22977d546914933baaa98cb4c9", size = 125695, upload-time = "2026-07-16T18:09:47.465Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/84/dd/368afe1506b28da46cfbbf5667a69512ddd8b442d038d372aba382a8033b/dagster_rest_resources-0.29.14-py3-none-any.whl", hash = "sha256:963010848851d974a84a04ea8f1de77a6b8fc27f20c01b4a3e8135571f282cc1", size = 111878, upload-time = "2026-07-16T18:09:46.294Z" },
 ]
 
 [[package]]
 name = "dagster-shared"
-version = "1.12.14"
+version = "1.13.14"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "packaging" },
@@ -625,28 +641,28 @@ dependencies = [
     { name = "tomlkit" },
     { name = "typing-extensions" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/cd/07/b7805cc1994b4a40a660bd8b73970005f99b59c9616f83551f9a7a76a438/dagster_shared-1.12.14.tar.gz", hash = "sha256:954f3065d8e477880176573d6aaf034fc099cbe2679472717cdbe29071b902ce", size = 78638, upload-time = "2026-02-05T21:28:31.027Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/43/64/f5ad913e5855de800476df89329500c99c3519cbad2021a5785c988ce232/dagster_shared-1.13.14.tar.gz", hash = "sha256:a06b4f370141827b57e3213a7a4b1652e1d7f6dda68d125d3eadee3505fcd25b", size = 123706, upload-time = "2026-07-16T18:09:23.045Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/60/c7/40bb84eef417f03f66854ecc478870c0a041b7d1898e72244ac583f34361/dagster_shared-1.12.14-py3-none-any.whl", hash = "sha256:c6784ac03f80db252a40929c5f061138446cf4ef76884697c07160ad0184626a", size = 91894, upload-time = "2026-02-05T21:28:30.027Z" },
+    { url = "https://files.pythonhosted.org/packages/10/58/ff0fef4f7d94e56b053559c5b3410f359c79daf7ae923bcf9f821a1c20fa/dagster_shared-1.13.14-py3-none-any.whl", hash = "sha256:baf982a03d07cfd076e3865abdb7349c206d9c2ddba20b1a9b8e52806f808b19", size = 95994, upload-time = "2026-07-16T18:09:21.889Z" },
 ]
 
 [[package]]
 name = "dagster-sling"
-version = "0.28.14"
+version = "0.29.14"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "dagster" },
     { name = "sling" },
     { name = "sling-mac-arm64", marker = "platform_machine == 'arm64' and sys_platform == 'darwin'" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/6e/96/c527623aeb45cf78a2bf63256af42cf3098249d87a686173f5098fbed27c/dagster_sling-0.28.14.tar.gz", hash = "sha256:093c4abbb851ab30af8d5a93ed7b9484b7f3ea72cb585980fbe82f129944ca4f", size = 22684, upload-time = "2026-02-05T21:29:33.7Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/f3/c7/dc01ff9ddc50aa16c952c2f504e252cb1cf819f2978d19396cb222ba0e01/dagster_sling-0.29.14.tar.gz", hash = "sha256:2051f4237b304eb59f22c9083e9dc8d99f63d478f1cb0fa222cc53ca6d7fdf24", size = 233086, upload-time = "2026-07-16T18:17:19.844Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/8b/fa/662834d9302135da01585dd02cfe92068bc16405e7982368832ad31df55e/dagster_sling-0.28.14-py3-none-any.whl", hash = "sha256:748434d137c6a233eb1715b7306cd72b50e44b17952f283d70505a03bc2e6112", size = 25887, upload-time = "2026-02-05T21:29:32.386Z" },
+    { url = "https://files.pythonhosted.org/packages/f1/6d/5e13d3fb93e123d80f858e2866a579b329470a38b8cedb8897e65f826ca1/dagster_sling-0.29.14-py3-none-any.whl", hash = "sha256:9b21c7f4f21056bd5dd558457533772fc45a62353eb9f1b70d40ee121458a2f5", size = 25390, upload-time = "2026-07-16T18:17:18.712Z" },
 ]
 
 [[package]]
 name = "dagster-webserver"
-version = "1.12.14"
+version = "1.13.14"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "click" },
@@ -655,9 +671,9 @@ dependencies = [
     { name = "starlette" },
     { name = "uvicorn", extra = ["standard"] },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/60/16/fbfa9022f2af0c145224c663b6e20f443b31175f3186cc1621167fc1cfd7/dagster_webserver-1.12.14.tar.gz", hash = "sha256:fc12d074147915606fa8e31ca37679ee1d4268f1d4b39d91f26f673d150c3902", size = 11906386, upload-time = "2026-02-05T21:26:51.646Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/e4/05/7978760080aaddd8ee0ee9b5a679d15e5a1421bf6c628607cea83d081956/dagster_webserver-1.13.14.tar.gz", hash = "sha256:5d3740009def24526c6f6cc1c529f3b7591e79f2b198f2304ea81f65b7546007", size = 12327606, upload-time = "2026-07-16T18:07:55.517Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/b2/ff/cf9e141a5055b48d0bc00f02e1b1a8fc347fd6b8a916ef7eaf534468fb71/dagster_webserver-1.12.14-py3-none-any.whl", hash = "sha256:bb814bfe6c36d3b422d797e01d9a524df7fc79eae445f957c987445779dc94ab", size = 12237338, upload-time = "2026-02-05T21:26:48.824Z" },
+    { url = "https://files.pythonhosted.org/packages/c9/e5/5982b53054706ebda53f3492973b19f28289d1bad9d7a6c7099059f9d879/dagster_webserver-1.13.14-py3-none-any.whl", hash = "sha256:ffbb97ab11116cbae761d648ebd866178f0457c795f9cdf147f7f4124704ee40", size = 12479184, upload-time = "2026-07-16T18:07:52.292Z" },
 ]
 
 [[package]]
@@ -1112,6 +1128,19 @@ wheels = [
 ]
 
 [[package]]
+name = "httpcore"
+version = "1.0.9"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "certifi" },
+    { name = "h11" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/06/94/82699a10bca87a5556c9c59b5963f2d039dbd239f25bc2a63907a05a14cb/httpcore-1.0.9.tar.gz", hash = "sha256:6e34463af53fd2ab5d807f399a9b45ea31c3dfa2276f15a2c3f00afff6e176e8", size = 85484, upload-time = "2025-04-24T22:06:22.219Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/7e/f5/f66802a942d491edb555dd61e3a9961140fd64c90bce1eafd741609d334d/httpcore-1.0.9-py3-none-any.whl", hash = "sha256:2d400746a40668fc9dec9810239072b40b4484b640a8c38fd654a024c7a1bf55", size = 78784, upload-time = "2025-04-24T22:06:20.566Z" },
+]
+
+[[package]]
 name = "httptools"
 version = "0.7.1"
 source = { registry = "https://pypi.org/simple" }
@@ -1145,6 +1174,21 @@ wheels = [
     { url = "https://files.pythonhosted.org/packages/32/4d/9dd616c38da088e3f436e9a616e1d0cc66544b8cdac405cc4e81c8679fc7/httptools-0.7.1-cp313-cp313-musllinux_1_2_aarch64.whl", hash = "sha256:44c8f4347d4b31269c8a9205d8a5ee2df5322b09bbbd30f8f862185bb6b05346", size = 455517, upload-time = "2025-10-10T03:54:51.066Z" },
     { url = "https://files.pythonhosted.org/packages/1d/3a/a6c595c310b7df958e739aae88724e24f9246a514d909547778d776799be/httptools-0.7.1-cp313-cp313-musllinux_1_2_x86_64.whl", hash = "sha256:465275d76db4d554918aba40bf1cbebe324670f3dfc979eaffaa5d108e2ed650", size = 458337, upload-time = "2025-10-10T03:54:52.196Z" },
     { url = "https://files.pythonhosted.org/packages/fd/82/88e8d6d2c51edc1cc391b6e044c6c435b6aebe97b1abc33db1b0b24cd582/httptools-0.7.1-cp313-cp313-win_amd64.whl", hash = "sha256:322d00c2068d125bd570f7bf78b2d367dad02b919d8581d7476d8b75b294e3e6", size = 85743, upload-time = "2025-10-10T03:54:53.448Z" },
+]
+
+[[package]]
+name = "httpx"
+version = "0.28.1"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "anyio" },
+    { name = "certifi" },
+    { name = "httpcore" },
+    { name = "idna" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/b1/df/48c586a5fe32a0f01324ee087459e112ebb7224f646c0b5023f5e79e9956/httpx-0.28.1.tar.gz", hash = "sha256:75e98c5f16b0f35b567856f597f06ff2270a374470a5c2392242528e3e3e42fc", size = 141406, upload-time = "2024-12-06T15:37:23.222Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/2a/39/e50c7c3a983047577ee07d2a9e53faf5a69493943ec3f6a384bdc792deb2/httpx-0.28.1-py3-none-any.whl", hash = "sha256:d909fcccc110f8c7faf814ca82a9a4d816bc5a6dbfea25d6591d6985b8ba59ad", size = 73517, upload-time = "2024-12-06T15:37:21.509Z" },
 ]
 
 [[package]]
@@ -1548,7 +1592,8 @@ name = "networkx"
 version = "3.6.1"
 source = { registry = "https://pypi.org/simple" }
 resolution-markers = [
-    "python_full_version >= '3.12'",
+    "python_full_version >= '3.13'",
+    "python_full_version == '3.12.*'",
     "python_full_version == '3.11.*'",
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/6a/51/63fe664f3908c97be9d2e4f1158eb633317598cfa6e1fc14af5383f17512/networkx-3.6.1.tar.gz", hash = "sha256:26b7c357accc0c8cde558ad486283728b65b6a95d85ee1cd66bafab4c8168509", size = 2517025, upload-time = "2025-12-08T17:02:39.908Z" }
@@ -2116,7 +2161,7 @@ wheels = [
 
 [[package]]
 name = "requests"
-version = "2.32.5"
+version = "2.33.1"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "certifi" },
@@ -2124,9 +2169,9 @@ dependencies = [
     { name = "idna" },
     { name = "urllib3" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/c9/74/b3ff8e6c8446842c3f5c837e9c3dfcfe2018ea6ecef224c710c85ef728f4/requests-2.32.5.tar.gz", hash = "sha256:dbba0bac56e100853db0ea71b82b4dfd5fe2bf6d3754a8893c3af500cec7d7cf", size = 134517, upload-time = "2025-08-18T20:46:02.573Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/5f/a4/98b9c7c6428a668bf7e42ebb7c79d576a1c3c1e3ae2d47e674b468388871/requests-2.33.1.tar.gz", hash = "sha256:18817f8c57c6263968bc123d237e3b8b08ac046f5456bd1e307ee8f4250d3517", size = 134120, upload-time = "2026-03-30T16:09:15.531Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/1e/db/4254e3eabe8020b458f1a747140d32277ec7a271daf1d235b70dc0b4e6e3/requests-2.32.5-py3-none-any.whl", hash = "sha256:2462f94637a34fd532264295e186976db0f5d453d1cdd31473c85a6a161affb6", size = 64738, upload-time = "2025-08-18T20:46:00.542Z" },
+    { url = "https://files.pythonhosted.org/packages/d7/8e/7540e8a2036f79a125c1d2ebadf69ed7901608859186c856fa0388ef4197/requests-2.33.1-py3-none-any.whl", hash = "sha256:4e6d1ef462f3626a1f0a0a9c42dd93c63bad33f9f1c1937509b8c5c8718ab56a", size = 64947, upload-time = "2026-03-30T16:09:13.83Z" },
 ]
 
 [[package]]
