@@ -22,16 +22,10 @@ dependencies = [
 ]
 
 [project.optional-dependencies]
-dev = [
-    "ruff",
-    "pytest",
-]
+dev = ["ruff", "pytest"]
 
 [dependency-groups]
-dev = [
-    "ruff",
-    "pytest",
-]
+dev = ["ruff", "pytest"]
 
 [build-system]
 requires = ["hatchling"]
@@ -42,9 +36,7 @@ directory_type = "project"
 
 [tool.dg.project]
 root_module = "dagster_essentials"
-registry_modules = [
-    "dagster_essentials.components.*",
-]
+registry_modules = ["dagster_essentials.components.*"]
 
 [tool.ruff.lint]
 ignore = [
