@@ -1,5 +1,6 @@
 from pathlib import Path
 
+import pandas as pd
 import requests
 from dagster_essentials.defs.assets import constants
 import dagster as dg
@@ -8,7 +9,7 @@ from dagster_essentials.defs.partitions import monthly_partition
 
 
 @dg.asset(partitions_def=monthly_partition)
-def taxi_trips_file(context: dg.AssetExecutionContext) -> None:
+def taxi_trips_file(context: dg.AssetExecutionContext) -> dg.MaterializeResult:
     """
     The raw parquet files for the taxi trips dataset. Sourced from the NYC Open Data portal.
     """
@@ -18,17 +19,22 @@ def taxi_trips_file(context: dg.AssetExecutionContext) -> None:
     persisted_file_path = Path(
         constants.TAXI_TRIPS_TEMPLATE_FILE_PATH.format(month_to_fetch)
     )
-    if persisted_file_path.exists():
-        return None
+    if not persisted_file_path.exists():
+        raw_trips = requests.get(
+            f"https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_{month_to_fetch}.parquet"
+        )
+        persisted_file_path.parent.mkdir(parents=True, exist_ok=True)
+        persisted_file_path.write_bytes(raw_trips.content)
 
-    raw_trips = requests.get(
-        f"https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_{month_to_fetch}.parquet"
+    num_rows = len(persisted_file_path)
+    return dg.MaterializeResult(
+        metadata={"Number of records": dg.MetadataValue.int(num_rows)}
     )
-    persisted_file_path.parent.mkdir(parents=True, exist_ok=True)
-    persisted_file_path.write_bytes(raw_trips.content)
 
 
-@dg.asset
+@dg.asset(
+    group_name="raw_files",
+)
 def taxi_zones_file() -> None:
     """
     The csv file for taxi zones of NYC
@@ -37,15 +43,24 @@ def taxi_zones_file() -> None:
 
     persisted_file_path = Path(constants.TAXI_ZONES_FILE_PATH)
     if persisted_file_path.exists():
-        return None
+        pass
+    else:
+        persisted_file_path.parent.mkdir(parents=True, exist_ok=True)
+        persisted_file_path.write_bytes(requests.get(TAXI_ZONES_URL).content)
 
-    persisted_file_path.parent.mkdir(parents=True, exist_ok=True)
-    persisted_file_path.write_bytes(requests.get(TAXI_ZONES_URL).content)
-    return None
+    num_rows = len(pd.read_parquet(persisted_file_path))
+
+    return dg.MaterializeResult(
+        metadata={"Number of records": dg.MetadataValue.int(num_rows)}
+    )
 
 
 # src/dagster_essentials/defs/assets/trips.py
-@dg.asset(deps=["taxi_trips_file"], partitions_def=monthly_partition)
+@dg.asset(
+    deps=["taxi_trips_file"],
+    partitions_def=monthly_partition,
+    group_name="ingested",
+)
 def taxi_trips(
     context: dg.AssetExecutionContext,
     database: DuckDBResource,
@@ -76,7 +91,10 @@ def taxi_trips(
         conn.execute(query)
 
 
-@dg.asset(deps=["taxi_zones_file"])
+@dg.asset(
+    deps=["taxi_zones_file"],
+    group_name="ingested",
+)
 def taxi_zones(database: DuckDBResource) -> None:
     """
     The raw taxi zone dataset, loaded into a DuckDB database
